@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выкуп Авто на Утилизацию и Лом — Быстро и Легально</title>
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --text: #374151;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span { color: var(--primary); }
+        .phone-btn {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .phone-btn:hover { background: var(--primary-dark); }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .hero .legal-notice {
+            max-width: 850px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+        .hero .legal-notice p {
+            font-size: 17px;
+            color: #d1d5db;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .hero .legal-notice p:last-child { margin-bottom: 0; }
+        .hero .legal-notice .important {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .hero .legal-notice .offer {
+            color: #6ee7b7;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+        }
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 28px;
+            transition: transform 0.2s;
+        }
+        .cta-btn:hover { transform: translateY(-2px); }
+
+        /* STEPS */
+        .steps { padding: 60px 0; background: white; text-align: center; }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            line-height: 1.25;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+        .card .step-num {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .card h3 { margin: 15px 0 10px; color: var(--dark); }
+
+        /* GALLERY */
+        .gallery {
+            padding: 60px 0;
+            background: var(--light);
+            text-align: center;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .gallery-grid figure {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            background: #e5e7eb;
+            aspect-ratio: 4/3;
+        }
+        .gallery-grid figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .gallery-grid figure:hover img { transform: scale(1.04); }
+
+        /* BENEFITS */
+        .benefits { padding: 60px 0; text-align: center; }
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        .benefit-icon {
+            font-size: 24px;
+            background: #e6f4ea;
+            color: var(--primary);
+            padding: 10px;
+            border-radius: 5px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        /* CONTACTS */
+        .contacts {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .contacts p { margin-bottom: 15px; color: #9ca3af; }
+        .contacts a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #111827;
+            color: #6b7280;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            border-top: 1px solid #374151;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 55px 0; }
+            .hero h1 { font-size: 28px; }
+            .hero .legal-notice p { font-size: 15px; }
+            .hero .legal-notice .offer { font-size: 19px; }
+            .header-content { flex-direction: column; gap: 15px; text-align: center; }
+            .section-title { font-size: 26px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .cta-btn { width: 100%; padding-left: 20px; padding-right: 20px; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">♻️ Авто<span>Утиль</span></div>
+            <a href="tel:++375292282355" class="phone-btn">📞 Позвонить</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Выкуп старых и проблемных авто на утилизацию</h1>
+            <div class="legal-notice">
+                <p>В соответствии с Указом Президента Республики Беларусь №348 «О мерах по организации сбора, хранения неэксплуатируемых транспортных средств и их последующей утилизации», в предусмотренных законом случаях такие автомобили могут быть принудительно перемещены на охраняемую стоянку, а при дальнейшем бездействии владельца — пройти процедуру признания бесхозяйными и последующей утилизации.</p>
+                <p class="important">❗️ Но пока автомобиль принадлежит вам — вы можете его продать и получить за него деньги.</p>
+            </div>
+            <a href="https://t.me/your_telegram_username" class="cta-btn">Оценить авто в Telegram</a>
+        </div>
+    </section>
+
+    <!-- КАК МЫ РАБОТАЕМ -->
+    <section class="steps">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="grid">
+                <div class="card"><div class="step-num">1</div><h3>Заявка</h3><p>Звоните или отправляете фото машины в мессенджер для предварительной оценки стоимости.</p></div>
+                <div class="card"><div class="step-num">2</div><h3>Выезд и расчет</h3><p>Наш специалист бесплатно приезжает на место, оценивает металл и выплачивает деньги сразу.</p></div>
+                <div class="card"><div class="step-num">3</div><h3>Эвакуация</h3><p>Мы самостоятельно и за свой счет грузим машину и увозим в пункт переработки.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ГАЛЕРЕЯ — перед "Почему выбирают нас" -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Автомобили, которые мы выкупаем</h2>
+            <div class="gallery-grid">
+                <figure><img src="img/photo1.jpg" alt="Скупка старых автомобилей на запчасти" loading="lazy"></figure>
+                <figure><img src="img/photo2.jpg" alt="Выкуп битых и нерабочих авто" loading="lazy"></figure>
+                <figure><img src="img/photo3.jpg" alt="Автомобиль на утилизацию" loading="lazy"></figure>
+                <figure><img src="img/photo4.jpg" alt="Выезд и оценка автомобиля" loading="lazy"></figure>
+                <figure><img src="img/photo5.jpg" alt="Приём авто на разборку" loading="lazy"></figure>
+                <figure><img src="img/photo6.jpg" alt="Эвакуация автомобиля" loading="lazy"></figure>
+                <figure><img src="img/photo7.jpg" alt="Авто в утиль" loading="lazy"></figure>
+                <figure><img src="img/photo8.jpg" alt="Улилизация авто" loading="lazy"></figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОЧЕМУ ВЫБИРАЮТ НАС -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="grid">
+                <div class="benefit-item"><div class="benefit-icon">💰</div><div><h4>Честная цена за вес</h4><p>Оцениваем машину исходя из реального содержания черного и цветного лома.</p></div></div>
+                <div class="benefit-item"><div class="benefit-icon">🚚</div><div><h4>Собственный эвакуатор</h4><p>Вам не нужно платить за доставку — вывоз нерабочего авто полностью бесплатный.</p></div></div>
+                <div class="benefit-item"><div class="benefit-icon">📋</div><div><h4>Официальное списание</h4><p>Подскажем, как правильно снять авто с учета в ГАИ для утилизации без лишних налогов.</p></div></div>
+            </div>
+        </div>
+    </section>
+    <!-- КОНТАКТЫ -->
+    <section class="contacts">
+        <div class="container">
+            <h2 class="section-title" style="color: white; margin-bottom: 20px;">Остались вопросы?</h2>
+            <p>Свяжитесь с нами прямо сейчас и узнайте стоимость вашего автомобиля:</p>
+            <p><a href="tel:+375292282355 ">+375 (29) 228-23-55</a></p>
+            <p style="margin-top: 10px;">Работаем ежедневно без выходных.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 АвтоУтиль. Все права защищены. Утилизация автотранспорта согласно экологическим нормам.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
